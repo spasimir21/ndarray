@@ -14,7 +14,7 @@ function generateDotCode(key: string): string {
       createArray(
         columns,
         j =>
-          `outArray.data[${i * rows + j}] = ${createArray(
+          `outArray.data[${i * columns + j}] = ${createArray(
             sumProductLength,
             k => `a.data[a.strides[0] * ${i} + a.strides[1] * ${k}] * b.data[b.strides[0] * ${k} + b.strides[1] * ${j}]`
           ).join(' + ')};`
